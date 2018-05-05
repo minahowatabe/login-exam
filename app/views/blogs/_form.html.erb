@@ -11,17 +11,46 @@
     </div>
   <% end %>
 
-  <div class="blog_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div class="blog_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
+<!--  <div class="blog_title">-->
+<!--    <div class="blog-panel">-->
+<!--     <%#= form.label :title %>-->
+<!--     <%#= form.text_field :title %>-->
+<!--    </div>-->
+<!--    <div class="blog_title">-->
+<!--     <%#= form.label :content %>-->
+<!--     <%#= form.text_field :content %>-->
+<!--    </div>-->
+<!--    <div class="submit_button">-->
+<!--     <%#= form.submit %>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--<%# end %>-->
+
+ <div class="container">
+  <div class="row">
+   <div class="blog_title col-offset-md-3 col-md-4">
+     <%= form.label :title %>
+     <%= form.text_field :title %>
+   </div>
+   <div class="blog_title">
+     <%= form.label :content %>
+     <%= form.text_field :content %>
+   </div>
   <%= form.submit %>
+
+  <!--<div class="row">-->
+  <!-- <%# @blogs.each do |blog| %>-->
+  <!--  <div class="blog-panel">-->
+  <!--    <%#= form.label :content %> -->
+  <!--    <%#= form.text_field :content %>-->
+  <!--   <div class="blog-links">-->
+   
+  <!--   <div class="submit_button">-->
+  <!--    <%#= form.submit %>-->
+  <!--   </div>-->
+  <!--  </div>-->
+  
 <% end %>
 
-<br>
 
-<%= link_to "Back to Blog Lists", blogs_path %>
+<%#= link_to 'Back to Blog Lists', blogs_path, class: "btn btn-primary" %>

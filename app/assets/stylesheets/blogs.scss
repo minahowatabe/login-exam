@@ -1,3 +1,153 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* フッタと同じ高さに設定 */
+  margin-bottom: 80px;
+
+  /* 一番下までスクロールした時の余白 */
+  padding-bottom: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.intro_message.div{
+  width: 100%;
+}
+
+p.intro_message{
+  font-size: 8rem;
+  text :bold;
+  height: 200px;
+  border-style: solid; 
+  border-width: 1px; 
+}
+
+
+.navbar{
+  background-color: darkseagreen;
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+
+.navbar-brand{
+  text-align: center;
+  text: bold;
+  color: olivedrab;
+}
+
+h1.lists_title{
+  text-align: center;
+}
+
+
+div, p {
+  font-size: 2rem;
+  padding: 5px;
+}
+
+div.blog-panel {
+  height: 200px;
+  border-style: dotted;
+  border-width: 1px;
+}
+
+div.blog-links {
+  height: 60px;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+div.container{
+    background-color: floralwhite;
+    width: 80%;
+}
+
+body {
+//   background-color: lightpink;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+ul.shows{
+  background-color: honeydew;
+  list-style: none;
+  padding: 5px;
+  font-size: 20px;
+}
+
+li.shows{
+  list-style: none;
+}
+
+.notice{
+  text-align: center;
+  color: darkgray;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.btn-default {
+    background-color: cadetblue; 
+    color: white;
+}
+
+.btn-info {
+    background-color: palegoldenrod; 
+    color: gray;
+}
+
+.btn-danger {
+    background-color: lightcoral; 
+    color: white;
+}
+.btn-primary {
+    background-color: olivedrab; 
+    color: white;
+}
+
+footer{
+    background-color: darkseagreen;
+    height: 80px;
+    width: 100%;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    display: table;
+}
+
+footer p{
+    font-size: 2rem;
+    color: dimgray;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+
+
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

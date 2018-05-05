@@ -1,7 +1,21 @@
-<h1>Blog details</h1>
-<p>Title: <%= @blog.title %></p>
-<p>Content: <%= @blog.content %></p>
+<h1 class="lists_title container-fluid">Blog details</h1>
+
+<article>
+  
+ <div class="shows">
+  <div class = "row">
+
+   <div class="col-md-11">
+    <ul class="row">
+      <li class="col-offset-md-4 col-md-3">Title: <%= @blog.title %></li>
+      <li class="col-md-6" >Content: <%= @blog.content %></li>
+    </ul>
+   </div>
+  
+  </div>
+ </div>
+</article>
 
 <br>
 
-<%= link_to "Back to Blog Lists", blogs_path %>
+<%= link_to "Back to Blog Lists", blogs_path, class: "btn btn-primary" %>
