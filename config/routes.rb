@@ -8,4 +8,3 @@ Rails.application.routes.draw do
 
 root to:'blogs#top'  
 end
-
