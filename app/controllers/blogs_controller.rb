@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :login_check, only: [:index, :new, :show, :edit, :update, :destroy]
   
   def top
   end
@@ -26,15 +27,15 @@ class BlogsController < ApplicationController
   end
   
   def show
-    @blog = Blog.find(params[:id])
+    # @blog = Blog.find(params[:id])
   end
   
   def edit
-    @blog = Blog.find(params[:id])
+    # @blog = Blog.find(params[:id])
   end
   
   def update
-    @blog = Blog.find(params[:id])
+    # @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: "I edited a blog."
     else
@@ -60,6 +61,13 @@ class BlogsController < ApplicationController
   
   def set_blog
     @blog = Blog.find(params[:id])
+  end
+  
+  def login_check
+    # if current_user.nil? 
+    unless logged_in?
+      redirect_to new_session_path 
+    end 
   end
   
 end

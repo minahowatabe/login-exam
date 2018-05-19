@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  resources :sessions, only:[:new, :create,:show,:destroy]
+  resources :users
   resources :blogs do
    collection do
      post :confirm
