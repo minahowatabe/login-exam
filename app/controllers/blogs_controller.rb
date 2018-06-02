@@ -18,6 +18,8 @@ class BlogsController < ApplicationController
   end
   
   def create
+    @blog = Blog.new(blogs_params)
+    @blog.user_id = current_user.id
     @blog = Blog.create(blog_params)
     if @blog.save
      redirect_to new_blog_path, notice: 'I have added a new blog post!'
@@ -27,6 +29,7 @@ class BlogsController < ApplicationController
   end
   
   def show
+    @favotirte = current_user.favorites.find_by(blog_id: @blog.id)
     # @blog = Blog.find(params[:id])
   end
   
