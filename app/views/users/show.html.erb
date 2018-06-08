@@ -1,3 +1,32 @@
-<h1><%= @user.name %>のページ</h1>
+<h2><%= @user.name %>'s PAGE</h2>
 
-<p>メールアドレス: <%= @user.email %></p>
+<p>mail address: <%= @user.email %></p>
+
+<br>
+
+<p>　　　　　　　　 you are logged-in now!</p>
+
+<p>★BlogLists [show]　⇒　you can add blogs on your favorite blog lists.</p>
+
+<br>
+
+<h3 class="lists_title container-fluid">my favoriteBlog Lists</h3>
+
+<p class="notice"><%= notice %></p>
+
+<div class="container">
+ <div class="row">
+   <% @favorites_blogs.each do |blog| %>
+    <div class="blog-panel col-md-6">
+       <h2><%= blog.title %></h2>
+       <p><%= blog.content %></p>
+    </div>   
+   <% end %>
+ </div>
+</div>   
+<br>
+
+<%= link_to 'Create New blog', new_blog_path, class: "btn btn-primary" %>
+<%= link_to "Back to Blog Lists", blogs_path, class: "btn btn-primary" %>
+
+<%#= link_to "favorite lists", favorites_path, class: "btn btn-primary" %>

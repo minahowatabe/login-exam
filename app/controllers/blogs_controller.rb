@@ -18,9 +18,9 @@ class BlogsController < ApplicationController
   end
   
   def create
-    @blog = Blog.new(blogs_params)
+    @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
-    @blog = Blog.create(blog_params)
+    # @blog = Blog.create(blog_params)
     if @blog.save
      redirect_to new_blog_path, notice: 'I have added a new blog post!'
     else
@@ -29,12 +29,13 @@ class BlogsController < ApplicationController
   end
   
   def show
-    @favotirte = current_user.favorites.find_by(blog_id: @blog.id)
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
     # @blog = Blog.find(params[:id])
   end
   
   def edit
     # @blog = Blog.find(params[:id])
+    
   end
   
   def update
@@ -53,6 +54,7 @@ class BlogsController < ApplicationController
   
   def confirm
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     render :new if @blog.invalid?
   end
   

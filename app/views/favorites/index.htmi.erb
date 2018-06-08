@@ -1,0 +1,18 @@
+<h1 class="lists_title container-fluid">favoriteBlog Lists</h1>
+
+<p class="notice"><%= notice %></p>
+
+<div class="container">
+ <div class="row">
+   <% @favorites_blogs.each do |blog| %>
+    <div class="blog-panel col-md-6">
+       <h2><%= blog.title %></h2>
+       <p><%= blog.content %></p>
+    </div>   
+   <% end %>
+ </div>
+</div>   
+<br>
+
+<%= link_to 'Create New blog', new_blog_path, class: "btn btn-primary" %>
+<%= link_to "Back to Blog Lists", blogs_path, class: "btn btn-primary" %>

@@ -1,21 +1,29 @@
 <h1 class="lists_title container-fluid">Blog Lists</h1>
 
-<p class="notice"><%= notice %></p>
+<p class="notice"><%#= notice #%></p>
 
 <div class="container">
  <div class="row">
-   <% @blogs.each do |blog| %>
-    <div class="blog-panel col-md-6">
-       <h2><%= blog.title %></h2>
-       <p><%= blog.content %></p>
-       
-     <div class="blog-links">
-        <%= link_to 'Show', blog, class: 'btn btn-default' %>
-        <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
-        <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-     </div>
-    </div>
-   <% end %>
+   <% if @user_id = current_user.id %>
+     <% @blogs.each do |blog| %>
+       <div class="blog-panel col-md-6">
+         <h2><%= blog.title %></h2>
+         <p><%= blog.content %></p>
+     
+       <% if blog.user_id == current_user.id %>
+          <div class="blog-links">
+            <%= link_to 'Show', blog, class: 'btn btn-default' %>
+            <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
+            <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          </div>
+       <% else %>
+            <div class="blog-links">
+              <%= link_to 'Show', blog, class: 'btn btn-default' %>
+            </div>
+       <% end%>
+       </div>
+     <% end%>
+   <% end%>
  </div>
 </div>   
 <br>
