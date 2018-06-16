@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :login_check, only: [:index, :new, :show, :edit, :update, :destroy]
   # before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :user_params
+  # before_action :user_params
   
   def top
   end
@@ -24,10 +24,10 @@ class BlogsController < ApplicationController
     @blog.user_id = current_user.id
     # @blog = Blog.create(blog_params)
     if @blog.save
-      user = User.new(user_params)
-      ContactMailer.contact_mail(user,@blog).deliver
+      # @user = User.find_by(email: params[:email])
+      ContactMailer.contact_mail(current_user).deliver
       
-      redirect_to new_blog_path, notexitice: 'I have added a new blog post!'
+      redirect_to new_blog_path, notice: 'I have added a new blog post!'
     else
      render 'new'  
     end
@@ -84,7 +84,7 @@ class BlogsController < ApplicationController
   #   @user = User.find(params[:id])
   # end
 
-  def user_params
-    params.require(:user).permit(:name, :email,)
-  end  
+  # def user_params
+  #   params.require(:user).permit(:name, :email,)
+  # end  
 end
