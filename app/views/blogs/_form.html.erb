@@ -36,13 +36,19 @@
        <%= form.label :content %>
        <%= form.text_field :content %>
      </div>
-  
-   <div class="row_b">
+   <div class="row_b"> 
+     <div class="field col-offset-md-3 col-md-6">
+       <%= form.label :image %>
+       <%= form.file_field :image, id: :blog_image %>
+   </div>
+   
+   <div class="row_c">
      <div class="create_botton col-offset-md-10 col-md-2">
        <%= form.submit %>
      </div>
    </div>
-   
-<% end %>
+  
+ <% end %> 
+
 
 <%#= link_to 'Back to Blog Lists', blogs_path, class: "btn btn-primary" %>

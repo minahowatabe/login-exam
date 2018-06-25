@@ -1,10 +1,15 @@
 <h2><%= @user.name %>'s PAGE</h2>
 
-<p>mail address: <%= @user.email %></p>
-
+<div class="container">
+ <div class="row">
+  <h2 class="col-md-6">mail address: <%= @user.email %></h2>
+  <div class "col-md-6">image: 
+  <%= image_tag @user.image %></div>
+ </div>
+</div>
 <br>
 
-<p>　　　　　　　　 you are logged-in now!</p>
+<h3>　　　　　　　　 you are logged-in now!</h3>
 
 <p>★BlogLists [show]　⇒　you can add blogs on your favorite blog lists.</p>
 

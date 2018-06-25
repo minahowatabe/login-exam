@@ -62,11 +62,10 @@ class BlogsController < ApplicationController
     @blog.user_id = current_user.id
     render :new if @blog.invalid?
   end
-  
 
   private
   def blog_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:name, :title, :content, :image, :image_cache)
   end
   
   def set_blog
@@ -79,12 +78,4 @@ class BlogsController < ApplicationController
       redirect_to new_session_path 
     end 
   end
-  
-  # def set_user
-  #   @user = User.find(params[:id])
-  # end
-
-  # def user_params
-  #   params.require(:user).permit(:name, :email,)
-  # end  
 end

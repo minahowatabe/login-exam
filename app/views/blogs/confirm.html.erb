@@ -1,16 +1,24 @@
-<h3>If the following information is correct then press the "post" button.</h3>
+<h4>If the following information is correct then press the "post" button.</h4>
 
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-
-  <p>タイトル:<%= @blog.title %></p>
-  <p>本文:<%= @blog.content %></p>
+  <%= form.hidden_field :image_cache %>
+  
+  <h3>タイトル:<%= @blog.title %></h3>
+  <h3>本文:<%= @blog.content %></h3>
+  <br>
+  <h3>画像:<%= image_tag @blog.image %></h3>
+  <br>
   <%= form.submit  "post" %>
 <% end %>
 
 <%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :image_cache %>
+  <br>
   <%= form.submit "return",name: 'back' %>
 <% end %>
+
+
